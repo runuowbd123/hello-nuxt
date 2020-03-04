@@ -39,8 +39,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  modules: [ '@nuxtjs/axios' ],
   /*
   ** Build configuration
   */
@@ -51,5 +50,23 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  proxy: {
+    "/search": {
+      target: 'https://api.tvmaze.com', // 代理地址
+      changeOrigin: true,
+    },
+  },
+  // axios: {
+  //   proxy: true,
+  //   prefix: '/search', // baseURL
+  //   credentials: true,
+  // },
+  // router: { //注意本地运行的时候要注释掉，打包的时候需要的话可以加上
+  //   base: './'
+  // }
+  server: {
+    port: 8001, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
 }

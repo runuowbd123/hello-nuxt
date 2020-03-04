@@ -22,11 +22,18 @@ export default {
   head() {
     return {
       title: 'test页面',
-      meta: [{
-        hid: 'id',
-        name: '大哥',
-        content: '111'
-      }]
+      meta: [
+        {
+          hid: 'id',
+          name: '大哥',
+          content: '111'
+        },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ],
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      ]
     }
   },
   

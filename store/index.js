@@ -3,11 +3,15 @@ import Vuex from 'vuex'
 
 let store = () => new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    tvShow: []
   },
   mutations: {
     changeCount(state, data) {
         state.count = data
+    },
+    setTvShow(state, data) {
+        state.tvShow = data
     }
   },
 //   getters: {

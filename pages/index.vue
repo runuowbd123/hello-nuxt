@@ -2,6 +2,7 @@
   <div class="container">
     <div>
       <logo />
+      <img src="../assets/logo.png">
       <p>
         vuex中的变量count：{{this.$store.state.count}} 
       </p>
@@ -10,6 +11,8 @@
         {{word}}
       </p>
       <nuxt-link :to="{name: 'test', params: {id: 123}}">去test页面</nuxt-link>
+      <br>
+      <nuxt-link :to="{name: 'tvShow', params: {id: 'superAdmin'}}">去tvShow页面</nuxt-link>
     </div>
   </div>
 </template>
@@ -29,6 +32,12 @@ export default {
       }]
     }
   },
+  fetch ({ store, params }) {
+    return api.getData()
+    .then((res) => {
+      store.commit('setTvShow', res.data)
+    })
+  },
   components: {
     Logo
   },
@@ -38,7 +47,7 @@ export default {
       }
   },
   mounted() {
-    console.log(this.tvShow)
+    console.log(this.$store.state.tvShow)
     this.changeWord()
   },
   methods: {
