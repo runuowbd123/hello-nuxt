@@ -29,7 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -39,7 +40,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [ '@nuxtjs/axios' ],
+  modules: [ '@nuxtjs/axios', '@nuxtjs/proxy' ],
   /*
   ** Build configuration
   */
@@ -64,7 +65,7 @@ export default {
   // },
   // router: { //注意本地运行的时候要注释掉，打包的时候需要的话可以加上
   //   base: './'
-  // }
+  // },
   server: {
     port: 8001, // default: 3000
     host: '0.0.0.0', // default: localhost

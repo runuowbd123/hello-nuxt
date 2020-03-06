@@ -1,9 +1,22 @@
 <template>
   <div>
+    <HeaderTop/>
     <nuxt />
   </div>
 </template>
+<script>
+import HeaderTop from '~/components/Header.vue'
+export default {
+  components: {
+    HeaderTop
+  },
+  mounted() {
+  },
+  methods: {
 
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

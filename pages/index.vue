@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <logo />
-      <img src="../assets/logo.png">
+      <img src="~/assets/logo.png">
       <p>
         vuex中的变量count：{{this.$store.state.count}} 
       </p>
@@ -71,7 +71,6 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
